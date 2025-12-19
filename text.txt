@@ -1,0 +1,13 @@
+I have data for continued pretraining of llm like qwen 3 32 b parameter , i want to perform continued pretraining of qwen 3 32b parameter model using unsloth , consult it documentation thoroughly before proceeding 
+a 100 or h100 , l40s any of these gpu , data is present in @output and @llm_training_data and domain is indian stock market data , dont have idea about dataset size , qlora sufficient for now 
+ 
+
+ cd /home/tgt/Documents/projects/personal/finetune-ernie-pretraining
+pip install -r requirements.txt
+# Quick test (2 steps)
+cd llm_training_data
+python unsloth_train.py --max_steps 2
+# Full training
+python unsloth_train.py
+# For L40S 48GB, use smaller batch
+python unsloth_train.py --batch_size 1
